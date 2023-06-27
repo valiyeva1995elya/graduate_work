@@ -1,0 +1,23 @@
+table {
+    border: 3px solid black;
+    border-collapse: collapse;
+    font-size: 15px;
+    font-family: poppins;
+}
+
+td,
+th {
+    border: 3px solid black;
+    padding: 10px 40px;
+    max-width: 240px;
+    word-wrap: break-word;
+}
+a{
+    text-decoration: none;
+}
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}

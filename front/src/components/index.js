@@ -1,0 +1,6 @@
+export { default as Main } from "./main/index"
+export { default as AuthRootComponent } from "./auth/index"
+export { default as HomePage } from "./home/index"
+export { default as University } from "./universities/index"
+export { default as ErrorPage } from "./error/index"
+export { default as SingleUniversityPage } from "./universities/university"

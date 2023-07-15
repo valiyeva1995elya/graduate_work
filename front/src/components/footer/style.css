@@ -1,3 +1,8 @@
+*{
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+   
+}
 footer{
     height: 100px;
     background-color: black;
@@ -19,10 +24,14 @@ footer{
     align-items: center;
 }
 p{
-    font-size: 9px;
+    font-size: 12px;
     text-align: center;
     
 }
 .logo-text{
-    font-size: 7px;
+    font-size: 8px;
+}
+.text-footer{
+    color: white;
+    font-size: 12px;
 }

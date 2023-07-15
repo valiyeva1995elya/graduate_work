@@ -1,12 +1,9 @@
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Footer from "../footer";
-import Header from "../header";
 import LoginPage from "./login";
 import RegisterPage from "./register";
 import "./style.css";
-
 
 export default function AuthRootComponent() {
   const [email, setEmail] = useState("");
@@ -18,20 +15,20 @@ export default function AuthRootComponent() {
   const navigate = useNavigate();
 
   const BASE_URL = "http://localhost:8080";
+  const users = JSON.parse(localStorage.getItem("users"));
 
-  const getUsers = () =>{
-    fetch(BASE_URL + "/accounts")
-        .then((response) => response.json())
-        .then((result) => {
-          localStorage.setItem("users", JSON.stringify(result));
-        })
-        .catch(() => console.log("err"));
-      }
-      const users = JSON.parse(localStorage.getItem("users"));
+  const getUsers = async () => {
+    await fetch(BASE_URL + "/accounts")
+      .then((response) => response.json())
+      .then((result) => {
+        localStorage.setItem("users", JSON.stringify(result));
+      })
+      .catch(() => console.log("err"));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (location.pathname === "/register") {
       const payload = {
         email,
@@ -40,8 +37,12 @@ export default function AuthRootComponent() {
         surname,
         age,
       };
-      if (checkDate(payload)) {
-        fetch(BASE_URL + "/accounts", {
+      let findUser = users.filter((person) => person.email === payload.email);
+      if (findUser.length > 0) {
+        alert("Данный логин уже занят");
+        return
+      }else if (checkDate(payload)) {
+        await fetch(BASE_URL + "/accounts", {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -55,19 +56,16 @@ export default function AuthRootComponent() {
         console.log("err");
       }
     } else if (location.pathname === "/login") {
-
       for (let i = 0; i <= users.length - 1; i++) {
         if (!validateEmail(email)) {
           alert("Incorrect email!");
           break;
         } else if (email === users[i].email && password === users[i].password) {
           localStorage.setItem("user", JSON.stringify(users[i]));
-
           navigate("/home");
         }
       }
     }
-
   };
   function checkDate(payload) {
     if (!validateEmail(payload.email)) {
@@ -75,7 +73,9 @@ export default function AuthRootComponent() {
       return false;
     }
     if (!validatePassword(payload.password)) {
-      alert("Пароль должен содержать не менее 8-ми символов, в том числе цифры, спецсимволы (/$!*), прописаные и строчные буквы!");
+      alert(
+        "Пароль должен содержать не менее 8-ми символов, в том числе цифры, спецсимволы (/$!*), прописаные и строчные буквы!"
+      );
       return false;
     }
     if (!validateAge(payload.age)) {
@@ -115,10 +115,8 @@ export default function AuthRootComponent() {
     getUsers();
   });
 
-
   return (
     <div className="root">
-   
       <form className="form" onSubmit={handleSubmit}>
         <Box
           display="flex"
@@ -131,10 +129,13 @@ export default function AuthRootComponent() {
           borderRadius={5}
           boxShadow={"5px 5px 10px #ccc"}
           marginTop={5}
-          
+          marginBottom={10}
         >
           {location.pathname === "/login" ? (
-            <LoginPage setEmail={setEmail} setPassword={setPassword} />
+            <LoginPage 
+              setEmail={setEmail} 
+              setPassword={setPassword} 
+              />
           ) : location.pathname === "/register" ? (
             <RegisterPage
               setEmail={setEmail}

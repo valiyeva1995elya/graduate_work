@@ -10,8 +10,11 @@
     
 }
 .incitingText{
-    color: #1900D5;
+    color: #2816b1;
     margin-left: 10px;
     cursor: pointer;
     text-decoration: none;
+}
+.input{
+    font-family: 'Amatic SC', cursive;
 }

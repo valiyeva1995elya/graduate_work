@@ -1,9 +1,7 @@
 import React from "react";
 import Header from "../header";
-import { ImageList, ImageListItem, Typography } from '@mui/material'
+import { ImageList, ImageListItem, Typography } from "@mui/material";
 import Footer from "../footer";
-
-
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -17,48 +15,48 @@ function srcset(image, size, rows = 1, cols = 1) {
 export default function Main() {
   const itemData = [
     {
-      img: 'https://univero.cc/public/media/university/imgs/3/%D1%864.jpg',
+      img: "https://inbusiness.kz/uploads/37/images/i00URlaE.jpeg",
       rows: 2,
       cols: 2,
     },
     {
-      img: 'https://testing.kz/images/universites/77/df29222e99499417b28a0d3255753073.jpg',
+      img: "https://testing.kz/images/universites/77/df29222e99499417b28a0d3255753073.jpg",
     },
     {
-      img: 'https://img2.storyblok.com/fit-in/1200x630/f/64062/1200x630/dd516e465b/how-to-get-into-stanford.jpg',
+      img: "https://weproject.media/upload/iblock/63e/63efa8fa2f2c346124d0a7fff9a07d1c.jpg",
     },
     {
-      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/%D0%9C%D0%93%D0%A3%2C_%D0%B2%D0%B8%D0%B4_%D1%81_%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%85%D0%B0.jpg/1200px-%D0%9C%D0%93%D0%A3%2C_%D0%B2%D0%B8%D0%B4_%D1%81_%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%85%D0%B0.jpg',
+      img: "https://univery.kz/images/kazakhskij-natsionalnyj-universitet-iskusstv.jpg",
       cols: 2,
     },
     {
-      img: 'https://lh5.googleusercontent.com/07Vuz7PYtWn539khMoluyKQtzQZpiTJcM7VVHXvsbOdEJTha2yzAr9dbeue82TPQTu20gBVB-saxtIkRWUwIznFmkk_tPKs88GWGmyOkOAdBlcnEHtluagGNc-8Tdg',
+      img: "https://tengrinews.kz/userdata/images/u320/resized/0fa82c6a6a11cfe298eeb275a396b89f.png",
       cols: 2,
     },
     {
-      img: 'https://api.new.buki.kz/blog_image/Gc/YH/GcYHCg00bQCR8YMph9qotyJxoB1kIW33UzDtoAMo.jpg',
+      img: "https://api.new.buki.kz/blog_image/Gc/YH/GcYHCg00bQCR8YMph9qotyJxoB1kIW33UzDtoAMo.jpg",
       rows: 2,
       cols: 2,
     },
     {
-      img: 'https://istu.ru/storage/uploadsevents/images/mezhdunarodnaja-dejatelnost/vuzy-partnery/egypt/egypet1.jpg',
+      img: "https://smu.edu.kz/wp-content/uploads/2019/09/img_3489.jpg",
     },
     {
-      img: 'https://immigrantinvest.com/wp-content/uploads/2016/02/top-universities-in-europe.jpeg',
+      img: "https://bilimdinews.kz/wp-content/uploads/2021/08/%D0%B0%D1%82%D1%8B%D1%80%D0%B0%D1%83-600.jpg",
     },
     {
-      img: 'https://smapse.ru/storage/2021/11/converted/895_0_samye-krasivye-universitety-v-mire-smapse-banner.png',
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/%D0%90%D0%BA%D0%B8%D0%BC%D0%B0%D1%82_%D0%9A%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B0%D0%B9.jpg/1200px-%D0%90%D0%BA%D0%B8%D0%BC%D0%B0%D1%82_%D0%9A%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B0%D0%B9.jpg",
       rows: 2,
       cols: 2,
     },
     {
-      img: 'https://politiq.ru/wp-content/uploads/2016/08/universiteti.jpg',
+      img: "https://sputnik.kz/img/07e6/08/0f/26715789_0:0:3072:1728_1920x0_80_0_0_d61993b8727f21f84c104ce1c55ef71b.jpg",
     },
     {
-      img: 'https://edu.gov.by/upload/medialibrary/2a4/2a429e02b24c42e1b85eb60bb40bcbae.jpg',
+      img: "https://www.gov.kz/uploads/2022/2/21/656d0a5558df43c75c1551f8efb00bfb_original.609897.png",
     },
     {
-      img: 'https://smapse.ru/image/full/name/v780x400-12.jpg/',
+      img: "https://ru.egemen.kz/media/2021/06/09/whatsapp-image-2021-06-09-at-10.24.30.jpeg",
       cols: 2,
     },
   ];
@@ -66,15 +64,16 @@ export default function Main() {
   return (
     <>
       <Header />
-      <Typography 
-        variant="h2" 
-        textAlign="center" 
-        fontFamily="Poppins" 
-        
+      <Typography
+        variant="h1"
+        textAlign="center"
+        fontFamily="Amatic SC , cursive"
+        fontWeight={700}
+        color="#222222"
         marginTop={5}
-        > 
-          University of your dreams! 
-        </Typography>
+      >
+        Выбери университет своей мечты!
+      </Typography>
       <ImageList
         sx={{ width: "90%", height: "100vh", padding: "1% 5%" }}
         variant="quilted"
@@ -95,8 +94,8 @@ export default function Main() {
           </ImageListItem>
         ))}
       </ImageList>
-      
-      <Footer/>
+
+      <Footer />
     </>
   );
 }

@@ -9,10 +9,9 @@ export default function SearchItem(props) {
       <TextField
         fullWidth={true}
         margin="normal"
-        className="block-search"
-        label="Search"
+        label="Поиск"
         variant="outlined"
-        placeholder="university search"
+        placeholder="Поиск университета"
         onChange={(e) => setSearchI(e.target.value)}
       />
     </div>

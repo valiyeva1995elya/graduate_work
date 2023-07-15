@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom"
-import {AuthRootComponent, HomePage, University, Main, ErrorPage, SingleUniversityPage} from "./components"
+import {AuthRootComponent, HomePage, University, Main, ErrorPage, SingleUniversityPage, Picture} from "./components"
 
 
 const router = createBrowserRouter([
@@ -31,6 +31,13 @@ const router = createBrowserRouter([
     {
         path: "/university/:id",
         element: <SingleUniversityPage /> ,
+        errorElement: <ErrorPage />,
+        
+    },
+    {
+        path: "/university/:id/img",
+        element: <Picture /> ,
+        errorElement: <ErrorPage />,
         
     },
 ])

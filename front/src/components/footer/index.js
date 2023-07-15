@@ -16,20 +16,18 @@ export default function Footer() {
         </div>
         <div>
           <p>
-            Call-центр<br />
-            <b>+7 (727) 777-27-27</b> <br />
-            <b>+7 (727) 777-28-28</b>
+            Call-центр
+            <br />
+            <b className="text-footer">+7 (727) 777-27-27</b> <br />
+            <b className="text-footer">+7 (727) 777-28-28</b>
           </p>
         </div>
         <div>
           <p>
-            <b>
-              {" "}
+            <b className="text-footer">
               проспект Мангилик Ел 10, <br />
-              Астана, Казахстан, 010000
-              <br />
-              university@edu.com
-              <br />
+              Астана, Казахстан, 010000 <br />
+              university@edu.com <br />
               +7 (727) 777-77-77
             </b>
           </p>

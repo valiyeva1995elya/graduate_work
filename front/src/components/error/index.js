@@ -6,12 +6,36 @@ export default function ErrorPage() {
 
   return (
     <div id="error-page">
-      <h1>Упс...</h1>
-      <p>Извините, произошла непредвиденная ошибка.</p>
+      <h1
+        style={{
+          fontFamily: "Amatic SC, cursive",
+          fontSize: "45px",
+          color: "#222222",
+        }}
+      >
+        Упс...
+      </h1>
+      <p
+        style={{
+          fontFamily: "Amatic SC, cursive",
+          fontSize: "35px",
+          color: "#696969",
+        }}
+      >
+        Извините, произошла непредвиденная ошибка.
+      </p>
       <p>
         {/* @ts-ignore */}
-        <i>{error.statusText || error.message}</i>
+        <i
+          style={{
+            fontFamily: "Amatic SC, cursive",
+            fontSize: "25px",
+            color: "#696969",
+          }}
+        >
+          {error.statusText || error.message}
+        </i>
       </p>
     </div>
   );
-};
+}

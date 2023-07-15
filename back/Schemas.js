@@ -8,17 +8,6 @@ const AccountSchema = new Schema({
     age: Number,
     follows: [],
 });
-
-const PostSchema = new Schema({
-    email: String,
-    title: String,
-    post: String,
-    like: Number,
-    date: {
-        type: Date,
-        default: Date.now
-    },
-});
 const UniversitySchema = new Schema({
     name: String,
     address: String,
@@ -32,6 +21,5 @@ const UniversitySchema = new Schema({
 
 module.exports = {
     AccountSchema,
-    PostSchema,
     UniversitySchema
 };

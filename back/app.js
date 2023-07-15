@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const accountsRouter = require("./routers/accountsRouter");
-const postsRouter = require("./routers/postsRouter");
 const universityRouter = require("./routers/universityRouter");
 
 const app = express();
@@ -18,7 +17,6 @@ mongoose.connect("mongodb+srv://valiyeva1995elya:BXCHAKUhQxxQBPuQ@cluster0.bktnx
     }else{
         console.log("start server");
         app.use("/accounts", accountsRouter);
-        app.use("/posts", postsRouter);
         app.use("/universities", universityRouter);
         app.listen(8080);
     }

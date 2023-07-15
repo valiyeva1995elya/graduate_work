@@ -12,22 +12,6 @@ router.get("/", (req, res) => {
     });
 });
 
-// router.get("/:id", (req, res) => {
-//     const id = req.params.id;
-//     // const university = UniversityModel.find((u) => u._id === Number(id))
-//     // if(university){
-//     //     res.send(university);
-//     // }else{
-//     //     res.status(404).send("University not found")
-//     // }
-//     UniversityModel.find(id, (err, result) => {
-//         if (err) {
-//             res.status(500).send(err);
-//         } else {
-//             res.status(200).send(result);
-//         }
-//     });
-// });
 router.get("/:id", (req, res) => {
     const id = req.params.id;
     UniversityModel.findById(id, (err, results) => {
@@ -70,18 +54,5 @@ router.delete("/:id", (req, res) => {
         }
     });
 });
-// router.get("/like/:id", async (req, res) => {
-//     const postId = req.params.id
-//     const post = await UniversityModel.findById(postId);
-//     await UniversityModel.findByIdAndUpdate(postId,{like: post.like +1 })
-//     res.status(201).send("Ok");
-// });
-
-// router.get("/unlike/:id", async (req, res) => {
-//     const postId = req.params.id
-//     const post = await UniversityModel.findById(postId);
-//     await UniversityModel.findByIdAndUpdate(postId,{like: post.like - 1})
-//     res.status(201).send("Ok");
-// });
 
 module.exports = router
